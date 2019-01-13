@@ -1,0 +1,16 @@
+[
+  {
+    "id": 123,
+    "name": "Nik",
+    "age": 18,
+    "male": "man",
+    "phone": 6872349
+  },
+  {
+    "id": 123,
+    "name": "Helen",
+    "age": 24,
+    "male": "woman",
+    "phone": 8395783
+  }
+]
