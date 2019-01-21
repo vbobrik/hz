@@ -8,7 +8,7 @@ import java.util.Map;
 public interface DAO {
 
     //initialize user list (read all json files and add into list)
-    void initialize();
+    void initialize(User obj);
 
     //get specific User by id
     User getById(int id);

@@ -17,6 +17,7 @@ import java.util.Map;
 import com.google.gson.Gson;
 import com.kinomo.dao.JsonDAO;
 import com.kinomo.model.User;
+import java.util.ArrayList;
 
 public class Runner {
 
@@ -27,21 +28,25 @@ public class Runner {
         Gson gson = new Gson();
 
         BufferedReader br = new BufferedReader(
-                new FileReader("E:/hw/hz/src/main/java/com/kinomo/users.json"));
+                new FileReader("src/main/java/com/kinomo/users.json"));
 
         //convert the json string back to object
-        User json = gson.fromJson(br, User.class);
+        //User json = gson.fromJson(br, User.class);
+        //dao.initialize(json);
+
         //or
         //User json = gson.fromJson(new FileReader("D:\\file.json"), User.class);
-        //List<User> users = json.getPhone();
+        //List<User> users = new ArrayList<User>();
+        //users.add(json);
 
-        Map<String, User> obj = new HashMap<>();
-        obj.containsKey(br);
-        Type type = new TypeToken<Map<String, Integer>>(){}.getType();
-        //Map<String, Integer> read = gson.fromJson(br, User.class);
+        Type listType = new TypeToken<List<User>>(){}.getType();
+        List<User> posts = gson.fromJson(br, listType);
 
-        dao.initialize();
-        System.out.println(json);
+        for(User oneUser : posts) {
+            dao.initialize(oneUser);
+        }
+        dao.getById(123);
+        System.out.println(posts.get(1).getPhone());
 
 
         //System.out.println(obj);

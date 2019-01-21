@@ -3,7 +3,7 @@ package com.kinomo.model;
 public class User {
     private int id;
     private String name;
-    private byte age;
+    private int age;
     private String male;
     private int phone;
 
@@ -23,11 +23,11 @@ public class User {
         this.name = name;
     }
 
-    public byte getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(byte age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -48,7 +48,7 @@ public class User {
     }
 
 
-    public User(int id, String name, byte age, String male, int phone) {
+    public User(int id, String name, int age, String male, int phone) {
         this.id = id;
         this.name = name;
         this.age = age;

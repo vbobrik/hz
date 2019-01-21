@@ -4,22 +4,20 @@ import com.kinomo.model.User;
 
 import java.util.*;
 
-import com.kinomo.model.User;
 
 public class JsonDAO implements DAO {
 
-    private static List<User> users;
-    private User obj;
+    private List<User> users = new ArrayList<>(1000);
 
     public JsonDAO() {
         if (users == null) {
-            initialize();
+            //initialize(obj) = new User(1, "Nik", 65, "man", 678679);
         }
     }
 
     @Override
-    public void initialize() {
-        //users.add(obj);
+    public void initialize(User obj) {
+       this.users.add(obj);
     }
 
     @Override
@@ -29,7 +27,7 @@ public class JsonDAO implements DAO {
 
     @Override
     public List<User> getAll() {
-       //return users.get();
+       //return users.get(users.getAll);
         return null;
     }
 

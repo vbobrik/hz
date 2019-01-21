@@ -7,8 +7,10 @@ import java.util.Map;
 
 //implement later
 public class DatabaseDAO implements DAO {
+    private  User obj;
+
     @Override
-    public void initialize() {
+    public void initialize(User obj) {
 
     }
 
