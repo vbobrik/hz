@@ -25,31 +25,18 @@ public class Runner {
         DAO dao = DAOFactory.get(DAOKeys.JSON);
 
         //...
-        Gson gson = new Gson();
 
-        BufferedReader br = new BufferedReader(
-                new FileReader("src/main/java/com/kinomo/users.json"));
+//        String user = "src/main/java/com/kinomo/users.json";
+//        dao.initialize(user);
+        System.out.println(dao.getById(5).getName());
+        System.out.println("*******");
 
-        //convert the json string back to object
-        //User json = gson.fromJson(br, User.class);
-        //dao.initialize(json);
+        dao.getAll();
+        System.out.println("*******");
 
-        //or
-        //User json = gson.fromJson(new FileReader("D:\\file.json"), User.class);
-        //List<User> users = new ArrayList<User>();
-        //users.add(json);
-
-        Type listType = new TypeToken<List<User>>(){}.getType();
-        List<User> posts = gson.fromJson(br, listType);
-
-        for(User oneUser : posts) {
-            dao.initialize(oneUser);
-        }
-        dao.getById(123);
-        System.out.println(posts.get(1).getPhone());
+        dao.getUnique();
 
 
-        //System.out.println(obj);
 
 
     }

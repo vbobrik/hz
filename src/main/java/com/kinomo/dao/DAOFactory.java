@@ -1,8 +1,10 @@
 package com.kinomo.dao;
 
+import java.io.FileNotFoundException;
+
 public class DAOFactory {
 
-    public static DAO get(DAOKeys daoKey) {
+    public static DAO get(DAOKeys daoKey) throws FileNotFoundException {
         DAO dao = null;
 
         switch (daoKey) {

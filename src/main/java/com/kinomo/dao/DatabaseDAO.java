@@ -2,6 +2,7 @@ package com.kinomo.dao;
 
 import com.kinomo.model.User;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +11,7 @@ public class DatabaseDAO implements DAO {
     private  User obj;
 
     @Override
-    public void initialize(User obj) {
+    public void initialize(String userObject) throws FileNotFoundException {
 
     }
 

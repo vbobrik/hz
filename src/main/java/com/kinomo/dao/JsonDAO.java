@@ -1,40 +1,63 @@
 package com.kinomo.dao;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 import com.kinomo.model.User;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.lang.reflect.Type;
 import java.util.*;
 
 
 public class JsonDAO implements DAO {
 
-    private List<User> users = new ArrayList<>(1000);
+    private List<User> users;
 
-    public JsonDAO() {
+    public JsonDAO() throws FileNotFoundException {
         if (users == null) {
-            //initialize(obj) = new User(1, "Nik", 65, "man", 678679);
+            String user = "src/main/java/com/kinomo/users.json";
+            initialize(user);
         }
     }
 
     @Override
-    public void initialize(User obj) {
-       this.users.add(obj);
+    public void initialize(String userObject) throws FileNotFoundException {
+
+        //convert the json string back to object
+        Gson gson = new Gson();
+        JsonReader string = new JsonReader(new FileReader(userObject));
+        TypeToken type = new TypeToken<List<User>>() {};
+        users = gson.fromJson(string,  type.getType());
+        System.out.println(users);
+        //User jsonObject = gson.fromJson(string, User.class);
+        //System.out.println(jsonObject);
     }
 
     @Override
-    public User getById(int id) {
-        return users.get(id);
+    public User getById(int indexOfUser) {
+       User object = users.get(indexOfUser);
+        return object;
     }
 
     @Override
     public List<User> getAll() {
-       //return users.get(users.getAll);
-        return null;
+
+        for(User user: users) {
+            System.out.println(user.getName());
+        }
+
+        return users;
     }
 
     @Override
     public Map<String, List<User>> getUnique() {
-         //users = new HashMap<>();
+        Map<String, List<User>> anyKey  = new HashSet<>(users);
+((HashSet) anyKey).addAll(users);
+
        // return users.getClass();
-        return null;
+        return anyKey;
     }
 }
