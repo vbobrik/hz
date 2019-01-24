@@ -34,7 +34,7 @@ public class Runner {
         dao.getAll();
         System.out.println("*******");
 
-        dao.getUnique();
+        System.out.println(dao.getUnique());
 
 
 

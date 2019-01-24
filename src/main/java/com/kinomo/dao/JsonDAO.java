@@ -29,8 +29,9 @@ public class JsonDAO implements DAO {
         //convert the json string back to object
         Gson gson = new Gson();
         JsonReader string = new JsonReader(new FileReader(userObject));
-        TypeToken type = new TypeToken<List<User>>() {};
-        users = gson.fromJson(string,  type.getType());
+        TypeToken type = new TypeToken<List<User>>() {
+        };
+        users = gson.fromJson(string, type.getType());
         System.out.println(users);
         //User jsonObject = gson.fromJson(string, User.class);
         //System.out.println(jsonObject);
@@ -38,26 +39,38 @@ public class JsonDAO implements DAO {
 
     @Override
     public User getById(int indexOfUser) {
-       User object = users.get(indexOfUser);
+        User object = users.get(indexOfUser);
         return object;
     }
 
     @Override
     public List<User> getAll() {
 
-        for(User user: users) {
+        for (User user : users) {
             System.out.println(user.getName());
         }
-
         return users;
     }
 
     @Override
     public Map<String, List<User>> getUnique() {
-        Map<String, List<User>> anyKey  = new HashSet<>(users);
-((HashSet) anyKey).addAll(users);
 
-       // return users.getClass();
-        return anyKey;
+        Map<String, List<User>> newMap = new HashMap<>();
+        for (User user : users) {
+
+            List<User> myUsers = newMap.get(user.getName());
+
+            if (myUsers == null) {
+                myUsers = new ArrayList<>();
+                newMap.put(user.getName(), myUsers);
+            }
+
+            myUsers.add(user);
+
+        }
+
+
+
+        return newMap;
     }
 }
