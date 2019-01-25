@@ -56,6 +56,32 @@ public class JsonDAO implements DAO {
     public Map<String, List<User>> getUnique() {
 
         Map<String, List<User>> newMap = new HashMap<>();
+        Set<String> userSet = new HashSet<>();
+
+        for (User user : users) {
+            userSet.add(user.getName());
+        }
+
+        for (String name : userSet) {
+            List<User> userList = new ArrayList<>();
+
+            for (User user : users) {
+                if (name.equals(user.getName())) {
+                    userList.add(user);
+                }
+            }
+
+            newMap.put(name, userList);
+        }
+
+        return newMap;
+    }
+
+    /*@Override
+    public Map<String, List<User>> getUnique() {
+
+        Map<String, List<User>> newMap = new HashMap<>();
+
         for (User user : users) {
 
             List<User> myUsers = newMap.get(user.getName());
@@ -69,8 +95,6 @@ public class JsonDAO implements DAO {
 
         }
 
-
-
         return newMap;
-    }
+    }*/
 }
