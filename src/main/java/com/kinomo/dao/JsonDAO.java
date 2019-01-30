@@ -90,11 +90,8 @@ public class JsonDAO implements DAO {
                 myUsers = new ArrayList<>();
                 newMap.put(user.getName(), myUsers);
             }
-
             myUsers.add(user);
-
         }
-
         return newMap;
     }*/
 }
