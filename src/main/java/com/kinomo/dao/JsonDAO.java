@@ -29,10 +29,9 @@ public class JsonDAO implements DAO {
         //convert the json string back to object
         Gson gson = new Gson();
         JsonReader string = new JsonReader(new FileReader(userObject));
-        TypeToken type = new TypeToken<List<User>>() {
-        };
-        users = gson.fromJson(string, type.getType());
-        System.out.println(users);
+        TypeToken type = new TypeToken<List<User>>() {};
+        users = gson.fromJson(string,  type.getType());
+        //System.out.println(users);
         //User jsonObject = gson.fromJson(string, User.class);
         //System.out.println(jsonObject);
     }
@@ -49,6 +48,7 @@ public class JsonDAO implements DAO {
         for (User user : users) {
             System.out.println(user.getName());
         }
+
         return users;
     }
 
