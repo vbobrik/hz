@@ -22,19 +22,19 @@ import java.util.ArrayList;
 public class Runner {
 
     public static void main(String[] args) throws FileNotFoundException {
-        DAO dao = DAOFactory.get(DAOKeys.JSON);
+        DAO dao = DAOFactory.get(DAOKeys.DATABASE);
 
         //...
 
 //        String user = "src/main/java/com/kinomo/users.json";
 //        dao.initialize(user);
-        System.out.println(dao.getById(5).getName());
+        /*System.out.println(dao.getById(5).getName());
         System.out.println("*******");
 
         dao.getAll();
         System.out.println("*******");
 
-        System.out.println(dao.getUnique());
+        System.out.println(dao.getUnique());*/
 
 
 

@@ -46,7 +46,7 @@ public class JsonDAO implements DAO {
     public List<User> getAll() {
 
         for (User user : users) {
-            System.out.println(user.getName());
+            System.out.println(user);
         }
 
         return users;
