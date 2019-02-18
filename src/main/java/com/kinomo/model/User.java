@@ -1,17 +1,27 @@
 package com.kinomo.model;
 
 public class User {
-    private int id;
+    private String id;
     private String name;
     private int age;
     private String male;
     private int phone;
 
-    public int getId() {
+    public String getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
+    private String clientId;
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -52,14 +62,14 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + name + ", clientId='" + clientId+ '\'' +
                 ", age=" + age +
                 ", male='" + male + '\'' +
                 ", phone=" + phone +
                 '}';
     }
 
-    public User(int id, String name, int age, String male, int phone) {
+    public User(String id, String name, int age, String male, int phone) {
         this.id = id;
         this.name = name;
         this.age = age;

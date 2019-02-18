@@ -24,11 +24,21 @@ public class Runner {
     public static void main(String[] args) throws FileNotFoundException {
         DAO dao = DAOFactory.get(DAOKeys.DATABASE);
 
-        //...
+        //.........     FOR  DATABASE          ..............
 
-//        String user = "src/main/java/com/kinomo/users.json";
-//        dao.initialize(user);
-        /*System.out.println(dao.getById(5).getName());
+
+        dao.initialize("users");
+        System.out.println("--------------");
+        System.out.println(dao.getById("5c5c41519c25662e9935d151").getName());
+        System.out.println("--------------");
+       // System.out.println(dao.getAll());
+        System.out.println("--------------");
+        //System.out.println(dao.getUnique());
+
+ //******       FOR  JSON:  ***********
+
+       /* String user = "src/main/java/com/kinomo/users.json";
+        System.out.println(dao.getById("1234").getName());
         System.out.println("*******");
 
         dao.getAll();
