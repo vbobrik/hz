@@ -1,6 +1,7 @@
 package com.kinomo.dao;
 
 import com.kinomo.model.User;
+import org.bson.Document;
 
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -12,7 +13,7 @@ public interface DAO {
     void initialize(String userObject) throws FileNotFoundException;
 
     //get specific User by id
-    User getById(int id);
+    User getById(String id);
 
     //get all users
     List<User> getAll();
