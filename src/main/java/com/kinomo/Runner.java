@@ -31,9 +31,9 @@ public class Runner {
         System.out.println("--------------");
         System.out.println(dao.getById("5c5c41519c25662e9935d151").getName());
         System.out.println("--------------");
-       // System.out.println(dao.getAll());
+        System.out.println(dao.getAll().toString());
         System.out.println("--------------");
-        //System.out.println(dao.getUnique());
+        System.out.println(dao.getUnique().toString());
 
  //******       FOR  JSON:  ***********
 

@@ -1,7 +1,7 @@
 package com.kinomo.model;
 
 public class User {
-    private String id;
+    private String _id;
     private String name;
     private int age;
     private String male;
@@ -18,11 +18,11 @@ public class User {
     private String clientId;
 
     public String getId() {
-        return id;
+        return _id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String _id) {
+        this._id = _id;
     }
 
     public String getName() {
@@ -61,7 +61,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "_id=" + _id +
                 ", name='" + name + ", clientId='" + clientId+ '\'' +
                 ", age=" + age +
                 ", male='" + male + '\'' +
@@ -70,11 +70,15 @@ public class User {
     }
 
     public User(String id, String name, int age, String male, int phone) {
-        this.id = id;
+        this._id = _id;
         this.name = name;
         this.age = age;
         this.male = male;
         this.phone = phone;
+    }
+
+    public User() {
+
     }
 
 
